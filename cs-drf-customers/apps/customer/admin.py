@@ -7,6 +7,7 @@ class CustomerAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('active',)
     list_editable = ('active',)
-    list_per_page = 25
+    list_per_page = 10
+    ordering = ('name', )
 
 admin.site.register(Customer, CustomerAdmin)
