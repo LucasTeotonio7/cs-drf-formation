@@ -5,6 +5,7 @@ coreapi==2.3.3
 coreschema==0.0.4
 Django==3.2.9
 djangorestframework==3.12.4
+Faker==0.7.4
 psycopg2==2.9.2
 psycopg2-binary==2.8.6
 ptvsd==4.3.2
