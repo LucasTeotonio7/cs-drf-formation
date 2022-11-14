@@ -3,5 +3,6 @@ from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions
 
 
 class AuthMixin():
-    authentication_class = [BasicAuthentication]
-    permission_classes = [IsAuthenticated, DjangoModelPermissions]
+    pass
+    # authentication_class = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated, DjangoModelPermissions]
