@@ -9,6 +9,7 @@ from apps.school.serializers import EnrollmentSerializer, EnrollmentStudentListS
 class EnrollmentViewSet(AuthMixin, viewsets.ModelViewSet):
     queryset = Enrollment.objects.all()
     serializer_class = EnrollmentSerializer
+    http_method_names = ['get', 'post', 'put', 'patch']
 
 
 class EnrollmentStudentListViewSet(AuthMixin, generics.ListAPIView):
