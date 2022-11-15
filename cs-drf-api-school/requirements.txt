@@ -8,6 +8,7 @@ django-cors-headers==3.13.0
 django-filter==22.1
 djangorestframework==3.12.4
 Faker==0.7.4
+Pillow==9.3.0
 psycopg2==2.9.2
 psycopg2-binary==2.8.6
 ptvsd==4.3.2
