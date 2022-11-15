@@ -8,6 +8,7 @@ class Student(models.Model):
     cpf = models.CharField(unique=True, max_length=11)
     birth_date = models.DateField()
     phone = models.CharField(max_length=11, default="")
+    photo = models.ImageField(blank=True)
 
 
     class Meta:
