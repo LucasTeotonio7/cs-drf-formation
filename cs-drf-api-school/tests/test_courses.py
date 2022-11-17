@@ -6,7 +6,6 @@ from rest_framework import status
 from apps.school.models import Course
 
 
-
 class CourseTestCase(APITestCase):
 
     def setUp(self) -> None:
@@ -21,6 +20,11 @@ class CourseTestCase(APITestCase):
             description="Course test 2", 
             level=Course.Level.INTERMEDIARY
         )
+        self.course3 = Course.objects.create(
+            code="TEST-3", 
+            description="Course test 3", 
+            level=Course.Level.ADVANCED
+        )
     
     def test_get_request_to_list_courses(self):
         response = self.client.get(self.list_url)
@@ -28,8 +32,8 @@ class CourseTestCase(APITestCase):
 
     def test_post_request_to_create_course(self):
         data = {
-            "code":"TEST-3", 
-            "description":"Course test 3", 
+            "code":"TEST-4", 
+            "description":"Course test 4", 
             "level": Course.Level.ADVANCED
         }
         response = self.client.post(self.list_url, data=data)
