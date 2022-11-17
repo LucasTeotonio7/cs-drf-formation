@@ -34,3 +34,16 @@ class CourseTestCase(APITestCase):
         }
         response = self.client.post(self.list_url, data=data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
+    def test_put_request_to_update_course(self):
+        data = {
+            "code":"TEST-1", 
+            "description":"Course test 1 update", 
+            "level": Course.Level.INTERMEDIARY
+        }
+        response = self.client.put('/courses/1/', data=data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_delete_request_to_delete_course(self):
+        response = self.client.delete('/courses/1/')
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
