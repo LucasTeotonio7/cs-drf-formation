@@ -20,5 +20,12 @@ class ProgramSerializerTestCase(TestCase):
         data = self.serializer.data
         self.assertEqual(
             set(data.keys()), 
-            set(['title', 'type', 'release_date', 'likes', 'dislikes'])
+            set(['title', 'type', 'release_date', 'likes'])
         )
+    
+    def test_content_serializer_data(self):
+        data = self.serializer.data
+        self.assertEqual(data['title'], self.program.title)
+        self.assertEqual(data['release_date'], self.program.release_date)
+        self.assertEqual(data['type'], self.program.type)
+        self.assertEqual(data['likes'], self.program.likes)
