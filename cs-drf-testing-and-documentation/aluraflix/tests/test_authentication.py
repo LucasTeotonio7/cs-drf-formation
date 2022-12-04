@@ -26,3 +26,8 @@ class AuthenticationUserTestCase(APITestCase):
     def test_unauthorized_request(self):
         response = self.client.get(self.list_url)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_get_request_with_authenticated_user(self):
+        self.client.force_authenticate(self.user)
+        response = self.client.get(self.list_url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
